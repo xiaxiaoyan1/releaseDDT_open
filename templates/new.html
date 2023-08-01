@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type"content="text/html;charset=utf-8">
+    <title>接口测试报告</title>
+</head>
+<style type="text/css">
+        .div{
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        }
+        .td{
+        white-space:nowrap;
+        word-break:keep-all;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        }
+</style>
+<body>
+    <h1 style="font-family: Microsoft YaHei">接口测试报告</h1>
+    <p class='attribute'>开始时间&nbsp;:&nbsp;2023-05-16 15:42:30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结束时间&nbsp;:&nbsp;2023-05-16 15:42:56</p>
+    <table id='statistical_table' class="table  table-condensed table-bordered table-hover" width=100%>
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+
+        </colgroup>
+        <tr id='header' class="text-center success" style="font-weight: bold;font-size: 14px;" bgcolor="#fcf8e3">
+            <th height="30"><font size="3"><b>客户端及版本</b></font></th>
+            <th><font size="3"><b>成功用例</b></font></th>
+            <th><font size="3"><b>失败用例</b></font></th>
+            <th><font size="3"><b>通过率</b></font></th>
+        </tr>
+        <tr class='failClass' bgcolor="#dff0d8" align="center">
+            <td height="30"><font size="3"><b>移动端接口</b></font></td>
+            <td><font size="3"><b>48</b></font></td>
+            <td><font color="red" size="3"><b>2</b></font></td>
+            <td><font size="3"><b>96.00%</b></font></td>
+        </tr>
+    </table>
+    <h3 style="font-family: Microsoft YaHei">错误接口列表</h3>
+    <table name='case_table' class="table  table-condensed table-bordered table-hover" width=100% id="contentTable"  style="table-layout: fixed;">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='case_title' class="text-center success" style="font-weight: bold;font-size: 14px;" bgcolor="#fcf8e3" align="center">
+            <td width=20%>用 例 名 称</td>
+            <td width=15%>功 能 模 块</td>
+            <td width=25%>CRL</td>
+            <td width=7%>失 败 结 果</td>
+            <td width=20%>预 期 结 果</td>
+            <td width=30%>实 际 结 果</td>
+        </tr>
+        <tr1>
+
+        </tr1>
+
+    </table>
+
+<script type="text/javascript">
+        var datas=[{"name":"专题页1","dome":"频道","curl":"jlaksjdflaskjdfa","result":"失败","response":"skldjfasld","resultsd":"aksjdlsk"},
+                    {"name":"专题页2","dome":"频道","curl":"jlaksjdflaskjdfa","result":"失败","response":"skldjfasld","resultsd":"aksjdlsk"},
+                    {"name":"专题页3","dome":"频道","curl":"jlaksjdflaskjdfa","result":"失败","response":"skldjfasld","resultsd":"aksjdlsk"},
+                    {"name":"专题页4","dome":"频道","curl":"jlaksjdflaskjdfa","result":"失败","response":"skldjfasld","resultsd":"aksjdlsk"},
+                    {"name":"专题页5","dome":"频道","curl":"jlaksjdflaskjdfa","result":"失败","response":"skldjfasld","resultsd":"aksjdlsk"}]
+        var tbody=document.querySelector("table");
+        for(var i=0;i<datas.length;i++){
+            var tr=document.createElement("tr");
+            tbody.appendChild(tr);
+            for(var k in datas[i])
+            {
+                var td=document.createElement("td");
+                tr.appendChild(td);
+                td.innerHTML=datas[i][k];
+            }
+            var td=document.createElement("td");
+            tr.appendChild(td);
+            td.innerHTML="<a href='javascript:;'>删除</a>";
+
+        }
+    </script>
+
+</body>
+</html>

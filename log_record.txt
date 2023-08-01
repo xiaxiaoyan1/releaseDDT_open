@@ -1,0 +1,4 @@
+[2023-07-31 07:41:18] [DEBUG] >>>  Starting new HTTP connection (1): 203.107.1.65:80
+[2023-07-31 07:41:18] [DEBUG] >>>  http://203.107.1.65:80 "GET /158713/resolve?host=api.iiolink.com,api.lejiazm.com,apic.lejiazm.com,api.widsomhome.com&sdk=android_2.0.2&sid=ssu1x132PyPh&net=wifi&bssid=28%3Ad0%3Af5%3A50%3Ad1%3A20 HTTP/1.1" 200 420
+[2023-07-31 07:41:18] [DEBUG] >>>  Starting new HTTPS connection (1): oapi.dingtalk.com:443
+[2023-07-31 07:41:19] [DEBUG] >>>  https://oapi.dingtalk.com:443 "POST /robot/send?access_token=6d5a5ca870d603e2e5b4a954cee03c75d5ca1da4ab5ea2b8585cc95306eedd5f HTTP/1.1" 200 None

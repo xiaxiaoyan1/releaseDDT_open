@@ -1,0 +1,14 @@
+[APIhost]
+appURL = http://api.dianshihome.com
+cmsURL = http://api.dianshihome.com
+casefile = /Users/dsj/Downloads/线上接口列表.xlsx
+sheetname = Sheet1
+[Runproject]
+project = 电视家3.0
+senddingding = ''
+header = {"uuid": "62db0038ebadb0c694a05c604c96a832","deviceId": "d9e3e4e11f16d7f8","ssid": "1f0a2058-de99-43c3-a821-8975cbf7fb44","authorization": "TlRaa05qbGpZV0l6TnpreFpqVXpZalZtT0RkbU56ZGlNVGd4WW1aak1ETT18MTY4MzcxMDgyNDExOTY4MzQ2NHwwZjU0Yzc2YjE2OTBjZWQ5NDNkNmQzYTVhMmY4ZGZlMTNhYTQ3NzJi","appid": "0990028e54b2329f2dfb4e5aeea6d625","userid": "3396650614d41e599523d9df70d3ea3b","hdDeviceId":"2c7a42a55688f65c0fdbea439a9b4884","Content-Type": "application/json"}
+report_file = Report
+Sheet1
+TV-线上主流程接口
+线上主流程接口
+/Users/dsj/Desktop/接口用例/线上接口列表.xlsx

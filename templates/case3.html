@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+<style type="text/css">
+  .div{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .td{
+    white-space:nowrap;
+    word-break:keep-all;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    }
+
+  </style>
+  <body>
+    <h1 style="font-family: Microsoft YaHei">接口测试报告</h1>
+    <p class='attribute'>开始时间&nbsp;:&nbsp;{{start_time}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结束时间&nbsp;:&nbsp;{{end_time}}</p>
+    <table id='statistical_table' class="table  table-condensed table-bordered table-hover" width=100%>
+      <colgroup>
+          <col align='left' />
+          <col align='right' />
+          <col align='right' />
+          <col align='right' />
+
+      </colgroup>
+      <tr id='header' class="text-center success" style="font-weight: bold;font-size: 14px;" bgcolor="#fcf8e3">
+        <th height="30"><font size="3"><b>客户端及版本</b></font></th>
+        <th><font size="3"><b>成功用例</b></font></th>
+        <th><font size="3"><b>失败用例</b></font></th>
+        <th><font size="3"><b>通过率</b></font></th>
+      </tr>
+      <tr class='failClass' bgcolor="#dff0d8" align="center">
+        <td height="30"><font size="3"><b>{{version}}</b></font></td>
+        <td><font size="3"><b>{{ispass}}</b></font></td>
+        <td><font color="red" size="3"><b>{{isfail}}</b></font></td>
+        <td><font size="3"><b>{{pass_rate}}</b></font></td>
+      </tr>
+  </table>
+    <h3 style="font-family: Microsoft YaHei">错误接口列表</h3>
+    <table id='case_table' class="table  table-condensed table-bordered table-hover" width=100% id="contentTable"  style="table-layout: fixed;">
+      <colgroup>
+        <col align='left' />
+        <col align='right' />
+        <col align='right' />
+        <col align='right' />
+        <col align='right' />
+      </colgroup>
+      <tr id='case_title' class="text-center success" style="font-weight: bold;font-size: 14px;" bgcolor="#fcf8e3" align="center">
+        <td width=20%>用 例 名 称</td>
+        <td width=15%>功 能 模 块</td>
+        <td width=25%>CRL</td>
+        <td width=7%>失 败 结 果</td>
+        <td width=20%>预 期 结 果</td>
+        <td width=30%>实 际 结 果</td>
+      </tr>
+      <tbody>
+        <tr id='case_list' bgcolor="#dff0d8" align="center">
+          <td width=20%>获取运营位</td>
+          <td width=15%>运营位</td>
+          <td width=25% class="id">
+            <div id= open style="display:none;word-break:break-all; word-wrap:break-word;">
+                    curl -v -X GET -H "Accept: */*" -H "Accept-Encoding: gzip, deflate" -H "Connection: keep-alive" -H "User-Agent: python-requests/2.26.0" -H "appid: 0990028e54b2329f2dfb4e5aeea6d625" -H "authorization: TURnNFpXVmpaamcyTVdFek9ESXpaREEyTVRnMllqZGpZak5pWW1VMU5XST18MTY4MDc3MjM5MDcyODIzNzIzMHwyNWNiZWVlZWJhOGJmMTA3ZWI3YmIxNmIxMzJmMGRlMDUzMDJmYzlh" -H "deviceId: d9e3e4e11f16d7f8" -H "hdDeviceId: f987184d07a1e4ebd8d7808d10e254d9" -H "ssid: 1f0a2058-de99-43c3-a821-8975cbf7fb44" -H "userid: 2453a89740d4e031eb60e50efce2370b" -H "uuid: 62db0038ebadb0c694a05c604c96a832" http://api.mydianshijia.com/api/v3/ad/operate?pos=all
+            </div>
+            <button class="slide">
+              <a href="javascript:showdiv('open','close')" id="close" class="btn-slide">展开+</a>
+            </button>
+          </td>
+          <td width=7%>Fail</td>
+          <td width=20%>{"errCode":0,"data":{}}</td>
+          <td width=30% class="id"><div class="div">状态码为:200</div></td>
+        </tr>
+        <tr id='case_list1' bgcolor="#dff0d8" align="center">
+          <td width=20%>获取运营位</td>
+          <td width=15%>运营位</td>
+          <td width=25% class="id">
+            <div id={{item.openid}} style="display:none;word-break:break-all; word-wrap:break-word;">
+                    curl -v -X GET -H "Accept: */*" -H "Accept-Encoding: gzip, deflate" -H "Connection: keep-alive" -H "User-Agent: python-requests/2.26.0" -H "appid: 0990028e54b2329f2dfb4e5aeea6d625" -H "authorization: TURnNFpXVmpaamcyTVdFek9ESXpaREEyTVRnMllqZGpZak5pWW1VMU5XST18MTY4MDc3MjM5MDcyODIzNzIzMHwyNWNiZWVlZWJhOGJmMTA3ZWI3YmIxNmIxMzJmMGRlMDUzMDJmYzlh" -H "deviceId: d9e3e4e11f16d7f8" -H "hdDeviceId: f987184d07a1e4ebd8d7808d10e254d9" -H "ssid: 1f0a2058-de99-43c3-a821-8975cbf7fb44" -H "userid: 2453a89740d4e031eb60e50efce2370b" -H "uuid: 62db0038ebadb0c694a05c604c96a832" http://api.mydianshijia.com/api/v3/ad/operate?pos=all
+            </div>
+            <button class="slide">
+              <a href="javascript:showdiv('{{item.openid}}','id')"  id ="id" class="btn-slide">展开+</a>
+            </button>
+          </td>
+          <td width=7%>Fail</td>
+          <td width=20%>{"errCode":0,"data":{}}</td>
+          <td width=30% class="id"><div class="div">状态码为:200</div></td>
+        </tr>
+
+      </tbody>
+    </table>
+    <script type="text/javascript" >
+
+      function showdiv(num,a) {
+
+        var box = document.getElementById(num);
+        var message = document.getElementById(a);
+        box.style.display = "block";
+        message.innerHTML = "收起-";
+        message.href = "javascript:hidediv(num,a)";
+
+
+      }
+      function hidediv(num,a) {
+        var box = document.getElementById(num);
+        var message = document.getElementById(a);
+        box.style.display = "block";
+        message.innerHTML = "展开+";
+        message.href = "javascript:showdiv()";
+
+      }
+
+
+    </script>
+</body>
+</html>

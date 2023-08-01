@@ -1,0 +1,14 @@
+[APIhost]
+appURL = http://api.dianshihome.com
+cmsURL = http://api.dianshihome.com
+casefile = /Users/dsj/Downloads/乐家线上接口列表.xlsx
+sheetname = Sheet2
+[Runproject]
+project = 电视家3.0
+senddingding = ''
+header = {'Host':'sh.api.lejiazm.com','If-Modified-Since':'Tue, 04 Jul 2023 01:43:01 GMT','uuid':'2b49af7b48afa2826f30b28b072c9a6a','appId':'c50a5c60ae7ab3db4fb9bcd2d20e399a','hwBrand':'CMIOT','hwModel':'M304A','osVersion':'28','ethMac':'ACBB61D0CBBA','wifiMac':'408C4C6E5018','channel':'default','appVersion':'48','User-Agent':'Xinjing/Launcher1.0'}
+report_file = Report
+Sheet1
+TV-线上主流程接口
+线上主流程接口
+/Users/dsj/Desktop/接口用例/线上接口列表.xlsx
