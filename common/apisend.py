@@ -115,27 +115,22 @@ def Common(caseexcel,nows,reportpath,config):
             continue
         try:
             '''获取实时参数'''
-
             if Query != '' and get_response != "" and parameter.get_parameter("$",str(Query)):
                 #获取上个接口字段结果
                 Query = get_Qurey.Get_query(Query, get_response)
                 get_response = ''
             if Query != '' and parameter.get_parameter('{{s_time}}', str(Query)) :# 毫秒时间戳
-                s_time = parameter.new_time()
-                Query = get_Qurey.get_timestamp("{{s_time}}", Query, s_time)
+                Query = get_Qurey.get_timestamp("{{s_time}}", Query, parameter.new_time()[0])
             if Query != '' and parameter.get_parameter("{{u_time}}", str(Query)) : # unix时间戳
-                u_time = parameter.new_time()
-                Query = get_Qurey.get_timestamp("{{u_time}}", Query, u_time)
+                Query = get_Qurey.get_timestamp("{{u_time}}", Query, parameter.new_time()[1])
             if data != '' and get_response != "" and parameter.get_parameter("$", str(data)):
                  # 获取上个接口字段结果
                 data = get_Qurey.Get_query(data, get_response)
                 get_response = ''
             if data != '' and parameter.get_parameter('{{s_time}}', str(data)) :# 毫秒时间戳
-                s_time = parameter.new_time()
-                data = get_Qurey.get_timestamp("{{s_time}}", data, s_time)
+                data = get_Qurey.get_timestamp("{{s_time}}", data, parameter.new_time()[0])
             if data != '' and parameter.get_parameter("{{u_time}}", str(data)) : # unix时间戳
-                u_time = parameter.new_time()
-                data = get_Qurey.get_timestamp("{{u_time}}", data, u_time)
+                data = get_Qurey.get_timestamp("{{u_time}}", data, parameter.new_time()[1])
         except Exception as a :
             error = '入参参数错误,请检查query或data : %s' % (a)
             failnum=fail_Exception_assert(casename,failnum,filedic, filelist, error,  reportpath, i)

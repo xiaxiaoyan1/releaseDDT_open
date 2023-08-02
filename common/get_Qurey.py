@@ -59,7 +59,7 @@ def get_timestamp(key,query,key_word):
 	:param key: 被替换内容
 	:param query: 被找内容
 	:param key_word: 替换内容
-	:return:
+	:return: 正常入参参数
 	'''
 	for e in query:
 		if key == query[e]:
