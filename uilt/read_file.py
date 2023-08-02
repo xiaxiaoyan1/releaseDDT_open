@@ -1,6 +1,6 @@
 
 # coding=utf-8
-import xlrd,time  #xlrd是1.2.0的版本，高版本执行会有问题
+import xlrd,time    #xlrd是1.2.0的版本，高版本执行会有问题
 import os
 import xlwt
 from xlwt import *
@@ -17,7 +17,7 @@ def ReadFile(file,sheet_name):
     opxl=xlrd.open_workbook(file)
     optext=opxl.sheet_by_name(sheet_name)#获取指定名称表
     nows=optext.nrows#获取表格行数
-    runtime = time.strftime('%Y-%m-%d %H:%M:%S')
+    # runtime = time.strftime('%Y-%m-%d %H:%M:%S')
     # print('INFO : %s read %s' % (runtime,file))
     return optext,nows,sheet_name
 class Write():
@@ -41,11 +41,13 @@ class Write():
         table.write(0,2,'模块',patter)
         table.write(0,3,'执行结果',patter)
         table.write(0,4,'错误返回',patter)
-        execlfile='%s'%(sheetname)+'测试报告'+'.xls'#获取当前时间并给表格命名
-        dis = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),report_file)#项目管理器运行
+        execlfile='TV线上测试报告'+'.xls'#获取当前时间并给表格命名
+        dis = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'/www/wwwroot/47.93.62.235/%s'%(report_file))#获取绝对路径的指定文件夹
+        # dis = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'/Report')#项目管理器运行
         filelpath = os.path.join(dis, execlfile)
         flie.save(filelpath)
-        runtime = time.strftime('%Y-%m-%d %H:%M:%S')
+        # runtime = time.strftime('%Y-%m-%d %H:%M:%S')
+        # print('INFO : %s create %s '%(runtime,filelpath))
         return filelpath
     def write_excel_xls_append(self,filepath,filelist):
         '''
@@ -54,11 +56,12 @@ class Write():
         :return:None
         '''
         workbook = xlrd.open_workbook(filepath,formatting_info=True)  # 打开工作簿,并保存原有数据样式
-        runtime = time.strftime('%Y-%m-%d %H:%M:%S')
+        # runtime = time.strftime('%Y-%m-%d %H:%M:%S')
         worksheet = workbook.sheet_by_name('测试结果')  # # 获取工作簿中所有表格中的的第一个表格(第一个sheet页)
         rows_old = worksheet.nrows  # 获取表格中已存在的数据的行数
         new_workbook = copy(workbook)  # 将xlrd对象拷贝转化为xlwt对象
-        runtime = time.strftime('%Y-%m-%d %H:%M:%S')
+        # runtime = time.strftime('%Y-%m-%d %H:%M:%S')
+        # print('INFO : %s cope file '%(runtime))
         new_worksheet = new_workbook.get_sheet(0)  # 获取转化后工作簿中的第一个表格(第一个sheet页)
         error_style = xlwt.easyxf('pattern: pattern solid, fore_colour red; font: bold on')
         for j in range(0, len(filelist)):
@@ -68,6 +71,8 @@ class Write():
             else:
                 '''pass数据追加'''
                 new_worksheet.write(rows_old, j, filelist[j])
-        runtime = time.strftime('%Y-%m-%d %H:%M:%S')
+        # runtime = time.strftime('%Y-%m-%d %H:%M:%S')
+        # print('INFO : %s write result ' % (runtime))
         new_workbook.save(filepath)  # 保存工作簿8
-        runtime = time.strftime('%Y-%m-%d %H:%M:%S')
+        # runtime = time.strftime('%Y-%m-%d %H:%M:%S')
+        # print('INFO : %s save %s success'%(runtime,filepath))
